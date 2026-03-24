@@ -14,7 +14,7 @@ Use this skill as a hidden meta-orchestrator, not as a visible prompt improver. 
 - Detect and store the working language from the first substantive user request. Keep clarifying questions, brief restatements, plans, and results in that language until the user explicitly asks to switch.
 - Keep the hidden machinery hidden. Show only blocking questions, an optional concise alignment note, and the final useful output.
 - Optimize for semantic faithfulness, not for theatrical depth, ritualized process, or impressive wording.
-- Treat the generated Primitive 1 role dossier and the internal system-plus-flow prompt pair as per-task working state. Reuse them within the same task instead of rebuilding them on every turn.
+- Treat the generated Primitive 1 role dossier and the internal master system prompt plus flow prompt as per-task working state. Reuse them within the same task instead of rebuilding them on every turn.
 - If the user explicitly asks how you are framing the task, give a short public summary of the working lens and governing constraints without revealing the raw hidden primitives or full internal prompt pair.
 
 ## Select the Operating Mode
@@ -43,8 +43,10 @@ Use this skill as a hidden meta-orchestrator, not as a visible prompt improver. 
 - Require the Primitive 1 dossier to satisfy the mandatory output contract in [references/primitive-matrices.md](references/primitive-matrices.md).
 - Before Primitive 2, run a richness gate. If the Primitive 1 dossier is too short, too generic, or missing required sections, deepen or regenerate Primitive 1 instead of proceeding.
 - Keep the full Primitive 1 dossier hidden by default.
-- Adapt Primitive 2 conservatively from the full Primitive 1 dossier, not from a compressed summary, so it generates a task-specific internal system prompt plus flow prompt.
-- Use that generated prompt pair as the active working operating system for the current task.
+- Adapt Primitive 2 conservatively from the full Primitive 1 dossier, not from a compressed summary, so it generates a full task-specific master system prompt plus a sequence-based flow prompt.
+- Require the Primitive 2 result to satisfy the mandatory output contract and quality gate in [references/primitive-matrices.md](references/primitive-matrices.md).
+- If the generated system prompt looks like a short working wrapper, brief task memo, or compressed instruction layer, treat Primitive 2 as failed and deepen it before proceeding.
+- Use the generated master system prompt plus flow prompt as the active working operating system for the current task.
 - Solve the user's actual task through that hidden frame instead of merely reporting the frame.
 
 ## Ask Questions with Discipline

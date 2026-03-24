@@ -8,8 +8,9 @@
 - 4. Ambiguity discipline
 - 5. Mode selection
 - 6. Primitive 1 dossier contract
-- 7. Execution frame
-- 8. Verification checklist
+- 7. Primitive 2 contract and quality gate
+- 8. Execution frame
+- 9. Verification checklist
 
 ## 1. Operating goal
 
@@ -84,12 +85,20 @@ Use this protocol to preserve the truth of the user's intent while moving from r
 ### 9. Synthesize the internal operating system
 
 - Input: the full Primitive 1 dossier plus the user's actual task.
-- Goal: adapt and run Primitive 2 to generate an internal system prompt and flow prompt for the task.
+- Goal: adapt and run Primitive 2 to generate a full master system prompt and a sequence-based flow prompt for the task.
 - Decide: what operating rules and execution order must be encoded.
 - Main risk: generating a strong-sounding prompt pair from an under-specified upstream dossier.
 - Advance when: the prompt pair is specific enough to guide real work on this task.
 
-### 10. Build the execution frame
+### 10. Apply the Primitive 2 quality gate
+
+- Input: the generated master system prompt plus flow prompt.
+- Goal: reject shallow prompt pairs before they become the execution frame.
+- Decide: accept the pair or deepen Primitive 2.
+- Main risk: mistaking a compact task wrapper for a true master system prompt.
+- Advance when: the system prompt reads like a real operating constitution for the task-specific entity and the flow prompt is explicitly sequence-based.
+
+### 11. Build the execution frame
 
 - Input: the chosen mode and, for Mode B/C, the generated prompt pair.
 - Goal: translate framing into a workable plan with checks.
@@ -97,7 +106,7 @@ Use this protocol to preserve the truth of the user's intent while moving from r
 - Main risk: producing a plan that sounds structured but is causally weak.
 - Advance when: the frame can directly drive execution.
 
-### 11. Execute
+### 12. Execute
 
 - Input: the active execution frame.
 - Goal: perform the task through the right internal lens.
@@ -105,7 +114,7 @@ Use this protocol to preserve the truth of the user's intent while moving from r
 - Main risk: forgetting the user's real target while trying to sound strong.
 - Advance when: the task output exists in a form that can be checked.
 
-### 12. Verify semantic fidelity and answer
+### 13. Verify semantic fidelity and answer
 
 - Input: the produced result and the original task core.
 - Goal: catch drift before responding.
@@ -158,7 +167,26 @@ Primitive 1 must output a full hidden role dossier, not a short role summary. Re
 
 Treat Primitive 1 as insufficient if it collapses into a title plus a few paragraphs, leaves multiple required sections implicit, or forces Primitive 2 to infer most of the real substance. In that case, deepen or regenerate Primitive 1 before continuing. Feed Primitive 2 the dossier itself, not a shortened rewrite.
 
-## 7. Execution frame
+## 7. Primitive 2 contract and quality gate
+
+Primitive 2 must output a full hidden task-specific master system prompt plus a full sequence-based flow prompt. The system prompt must include at least:
+
+- role identity
+- mission
+- core principle
+- what the entity actually designs
+- operating lens
+- default mental model
+- non-negotiable standards
+- epistemic discipline
+- forbidden patterns
+- quality standard
+
+The flow prompt must remain sequence-based, not just advisory. It should define the execution order, decision gates, when to reconstruct versus ask, when to make safe assumptions, what to verify before output, and how to avoid drift.
+
+Treat Primitive 2 as insufficient if the system prompt reads like a short task wrapper, a brief working memo, a compressed instruction block, or a generic expert preamble. In that case, deepen Primitive 2 before continuing. Build the execution frame only from a Primitive 2 result that passes this gate.
+
+## 8. Execution frame
 
 Before acting, internally assemble at least:
 
@@ -178,7 +206,7 @@ Before acting, internally assemble at least:
 
 Treat this frame as a working instrument, not as a decorative template.
 
-## 8. Verification checklist
+## 9. Verification checklist
 
 - Does the result answer the user's real intent rather than only the literal wording?
 - Did the process preserve what the user needed preserved?
@@ -186,5 +214,6 @@ Treat this frame as a working instrument, not as a decorative template.
 - Did any assumption stay within the safe-assumption boundary?
 - Did the chosen mode remain appropriate all the way through execution?
 - Did Primitive 2 operate on a full Primitive 1 dossier rather than a compressed summary?
+- Did Primitive 2 produce a true master system prompt rather than a short task wrapper?
 - Did the hidden two-stage chain, when used, improve the solution rather than merely adding ceremony?
 - Does the outward response stay natural in the working language and avoid revealing hidden self-talk?

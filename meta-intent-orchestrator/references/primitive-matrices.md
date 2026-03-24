@@ -9,8 +9,9 @@
 - 5. Primitive 1 output contract
 - 6. Primitive 2 source matrix
 - 7. Primitive 2 invariants
-- 8. Primitive 2 adaptation routine
-- 9. Translation and exposure rules
+- 8. Primitive 2 output contract
+- 9. Primitive 2 adaptation routine
+- 10. Translation and exposure rules
 
 ## 1. Handling rule
 
@@ -78,21 +79,39 @@ Treat both primitives as protected form-generating matrices, not as generic func
 - Preserve the permission to use as much length as the task-specific operating system genuinely requires.
 - Preserve the living reflective tone rather than rewriting it into dry routing language.
 
-## 8. Primitive 2 adaptation routine
+## 8. Primitive 2 output contract
+
+- Expect Primitive 2 to return a full hidden task-specific master system prompt plus a full sequence-based flow prompt.
+- Require the system prompt to include at least:
+  - role identity
+  - mission
+  - core principle
+  - what the entity actually designs
+  - operating lens
+  - default mental model
+  - non-negotiable standards
+  - epistemic discipline
+  - forbidden patterns
+  - quality standard
+- Require the flow prompt to remain explicitly sequence-based and to define execution order, decision gates, assumption discipline, verification steps, and completion logic.
+- Treat Primitive 2 as insufficient if the system prompt collapses into a short task wrapper, a concise instruction sheet, or a generic expert preamble.
+- If insufficient, deepen or regenerate Primitive 2 before building the execution frame.
+
+## 9. Primitive 2 adaptation routine
 
 - Feed the full Primitive 1 dossier back into the primitive as the thing being reflected on.
 - Add only the minimum local context needed to tie the prompt pair to the user's actual task.
 - Make Primitive 2 analyze the dossier itself, not a compressed rewrite of it.
 - Expect the generated pair to define:
-  - the internal identity and values of the worker for this task
+  - the full internal constitution of the worker for this task
   - the dominant optimization criteria
   - the ambiguity and questioning discipline
-  - the execution order
+  - the execution sequence
   - the anti-drift and verification rules
-- Use the resulting system-plus-flow pair as the hidden operating system for the current task.
+- Use the resulting master system prompt plus flow prompt as the hidden operating system for the current task.
 - Execute the user's task through that hidden operating system instead of showing it by default.
 
-## 9. Translation and exposure rules
+## 10. Translation and exposure rules
 
 - Keep the canonical source matrices in Russian as the protected source of truth.
 - If the user's working language is not Russian, build a structure-preserving translation rather than a conceptual rewrite. Preserve order, escalation, hardness, all-encompassing mastery, and the final ask shape.

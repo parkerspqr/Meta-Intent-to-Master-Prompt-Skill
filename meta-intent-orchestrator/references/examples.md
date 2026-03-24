@@ -10,7 +10,7 @@ Expected behavior: Stay in Mode A. Do not run the full hidden two-stage chain. M
 
 User request: "Redesign this landing page so it feels premium and strategic, but keep the underlying concept and offer intact."
 
-Expected behavior: Run the full hidden two-stage chain. Generate a full hidden Primitive 1 role dossier first, enrich it if the first pass is too thin, then let Primitive 2 analyze that dossier and generate the internal prompt pair before solving.
+Expected behavior: Run the full hidden two-stage chain. Generate a full hidden Primitive 1 role dossier first, enrich it if the first pass is too thin, then let Primitive 2 analyze that dossier and generate a true master system prompt plus a sequence-based flow prompt before solving.
 
 ## 3. Mode C: complex task with blocking ambiguity
 
@@ -51,3 +51,9 @@ Expected behavior: Give a short public summary of the working lens, priorities, 
 Internal situation: Primitive 1 first returns only a role title and a few short paragraphs.
 
 Expected behavior: Treat that output as insufficient. Do not pass it to Primitive 2. Deepen Primitive 1 until the full role dossier contract is satisfied, then continue.
+
+## 9. Primitive 2 quality gate
+
+Internal situation: Primitive 2 returns a brief task wrapper such as "You are an expert designer. Improve the page while preserving brand identity. Work carefully and avoid clichés."
+
+Expected behavior: Treat that output as insufficient. Do not build the execution frame from it. Deepen Primitive 2 until it becomes a real master system prompt with the required sections and a sequence-based flow prompt.
