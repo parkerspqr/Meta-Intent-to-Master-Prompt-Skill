@@ -1,0 +1,7 @@
+interface:
+  display_name: "Meta Intent Orchestrator"
+  short_description: "For complex requests, silently build the right maximal entity and internal prompt pair before solving."
+  default_prompt: "Use $meta-intent-orchestrator to decide whether my request needs a light direct mode or a full hidden two-stage build. If the task is complex, first recover the real intent, then silently generate the right maximal entity and internal system-plus-flow prompt pair for this task, and solve through that frame while keeping the hidden chain private."
+
+policy:
+  allow_implicit_invocation: true
